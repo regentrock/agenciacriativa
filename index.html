@@ -3,380 +3,551 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agência Criativa Web - Transformamos ideias em experiências digitais inovadoras. Design, desenvolvimento web, branding e marketing digital.">
+    <meta name="keywords" content="agência digital, design gráfico, desenvolvimento web, branding, marketing digital, Campinas">
+    <meta name="author" content="Agência Criativa Web">
+    
     <title>Agência Criativa Web - Design Digital Inovador</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preconnect para otimização de carregamento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
+    <!-- Header -->
+    <header class="header" role="banner">
         <div class="container">
-            <div class="logo">
-                <h1>Agência<span class="highlight">Criativa</span></h1>
+            <div class="header__brand">
+                <h1 class="logo">
+                    Agência<span class="logo__highlight">Criativa</span>
+                </h1>
             </div>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-                    <li><a href="#contato" class="nav-link">Contato</a></li>
+            
+            <nav class="nav" role="navigation" aria-label="Menu principal">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#sobre" class="nav__link">Sobre</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#servicos" class="nav__link">Serviços</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#depoimentos" class="nav__link">Depoimentos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contato" class="nav__link">Contato</a>
+                    </li>
                 </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                
+                <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
             </nav>
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="geometric-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-title">
-                    Transformamos <span class="highlight">Ideias</span> em 
-                    <span class="highlight">Experiências Digitais</span>
-                </h2>
-                <p class="hero-subtitle">
-                    Somos uma agência especializada em design digital inovador, 
-                    criando soluções visuais que conectam marcas ao futuro.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#servicos" class="btn btn-primary">Nossos Serviços</a>
-                    <a href="#contato" class="btn btn-secondary">Fale Conosco</a>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero__background">
+                <div class="hero__shapes">
+                    <div class="shape shape--primary"></div>
+                    <div class="shape shape--secondary"></div>
+                    <div class="shape shape--tertiary"></div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="sobre" class="sobre">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sobre Nós</h2>
-                <div class="section-subtitle">Criatividade sem limites</div>
-            </div>
-            <div class="sobre-content">
-                <div class="sobre-text">
-                    <h3>Inovação é o nosso DNA</h3>
-                    <p>
-                        Na Agência Criativa Web, acreditamos que cada projeto é uma oportunidade 
-                        única de criar algo extraordinário. Com mais de 5 anos de experiência no 
-                        mercado digital, nossa equipe combina criatividade, tecnologia e estratégia 
-                        para entregar resultados que superam expectativas.
+            
+            <div class="container">
+                <div class="hero__content">
+                    <h2 class="hero__title">
+                        Transformamos <span class="text-highlight">Ideias</span> em 
+                        <span class="text-highlight">Experiências Digitais</span>
+                    </h2>
+                    
+                    <p class="hero__subtitle">
+                        Somos uma agência especializada em design digital inovador, 
+                        criando soluções visuais que conectam marcas ao futuro.
                     </p>
-                    <div class="valores">
-                        <div class="valor">
-                            <i class="fas fa-lightbulb"></i>
-                            <h4>Inovação</h4>
-                            <p>Sempre buscando as melhores soluções tecnológicas</p>
-                        </div>
-                        <div class="valor">
-                            <i class="fas fa-users"></i>
-                            <h4>Colaboração</h4>
-                            <p>Trabalhamos em parceria com nossos clientes</p>
-                        </div>
-                        <div class="valor">
-                            <i class="fas fa-rocket"></i>
-                            <h4>Resultados</h4>
-                            <p>Foco em entregar valor real para o negócio</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="sobre-visual">
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">Projetos Concluídos</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Clientes Satisfeitos</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">5+</div>
-                            <div class="stat-label">Anos de Experiência</div>
-                        </div>
+                    
+                    <div class="hero__actions">
+                        <a href="#servicos" class="btn btn--primary" aria-label="Ver nossos serviços">
+                            Nossos Serviços
+                        </a>
+                        <a href="#contato" class="btn btn--secondary" aria-label="Entrar em contato">
+                            Fale Conosco
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="servicos" class="servicos">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Nossos Serviços</h2>
-                <div class="section-subtitle">Soluções completas para sua marca</div>
-            </div>
-            <div class="servicos-grid">
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-paint-brush"></i>
+        <!-- About Section -->
+        <section id="sobre" class="about">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-header__title">Sobre Nós</h2>
+                    <p class="section-header__subtitle">Criatividade sem limites</p>
+                </header>
+                
+                <div class="about__content">
+                    <div class="about__text">
+                        <h3 class="about__heading">Inovação é o nosso DNA</h3>
+                        <p class="about__description">
+                            Na Agência Criativa Web, acreditamos que cada projeto é uma oportunidade 
+                            única de criar algo extraordinário. Com mais de 5 anos de experiência no 
+                            mercado digital, nossa equipe combina criatividade, tecnologia e estratégia 
+                            para entregar resultados que superam expectativas.
+                        </p>
+                        
+                        <div class="values">
+                            <article class="value">
+                                <div class="value__icon">
+                                    <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                                </div>
+                                <h4 class="value__title">Inovação</h4>
+                                <p class="value__description">Sempre buscando as melhores soluções tecnológicas</p>
+                            </article>
+                            
+                            <article class="value">
+                                <div class="value__icon">
+                                    <i class="fas fa-users" aria-hidden="true"></i>
+                                </div>
+                                <h4 class="value__title">Colaboração</h4>
+                                <p class="value__description">Trabalhamos em parceria com nossos clientes</p>
+                            </article>
+                            
+                            <article class="value">
+                                <div class="value__icon">
+                                    <i class="fas fa-rocket" aria-hidden="true"></i>
+                                </div>
+                                <h4 class="value__title">Resultados</h4>
+                                <p class="value__description">Foco em entregar valor real para o negócio</p>
+                            </article>
+                        </div>
                     </div>
-                    <h3>Design Gráfico</h3>
-                    <p>Criação de identidades visuais marcantes que comunicam a essência da sua marca de forma impactante.</p>
-                    <ul class="servico-features">
-                        <li>Logotipos e Identidade Visual</li>
-                        <li>Material Impresso</li>
-                        <li>Ilustrações Personalizadas</li>
-                    </ul>
-                </div>
-                <div class="servico-card featured">
-                    <div class="servico-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Sites e aplicações web responsivas, modernas e otimizadas para performance e conversão.</p>
-                    <ul class="servico-features">
-                        <li>Sites Responsivos</li>
-                        <li>E-commerce</li>
-                        <li>Aplicações Web</li>
-                    </ul>
-                    <div class="featured-badge">Mais Procurado</div>
-                </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Branding</h3>
-                    <p>Estratégias de marca completas que posicionam seu negócio de forma única no mercado.</p>
-                    <ul class="servico-features">
-                        <li>Estratégia de Marca</li>
-                        <li>Manual de Identidade</li>
-                        <li>Posicionamento</li>
-                    </ul>
-                </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Design Mobile</h3>
-                    <p>Interfaces mobile-first que oferecem experiências excepcionais em dispositivos móveis.</p>
-                    <ul class="servico-features">
-                        <li>Apps Mobile</li>
-                        <li>UX/UI Design</li>
-                        <li>Prototipagem</li>
-                    </ul>
-                </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Marketing Digital</h3>
-                    <p>Estratégias digitais integradas que aumentam sua visibilidade e geram resultados mensuráveis.</p>
-                    <ul class="servico-features">
-                        <li>SEO e SEM</li>
-                        <li>Redes Sociais</li>
-                        <li>Análise de Dados</li>
-                    </ul>
-                </div>
-                <div class="servico-card">
-                    <div class="servico-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>Fotografia</h3>
-                    <p>Produção fotográfica profissional que captura a essência da sua marca com qualidade excepcional.</p>
-                    <ul class="servico-features">
-                        <li>Fotografia Corporativa</li>
-                        <li>Produtos</li>
-                        <li>Eventos</li>
-                    </ul>
+                    
+                    <aside class="about__stats">
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat__number">150+</div>
+                                <div class="stat__label">Projetos Concluídos</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__number">50+</div>
+                                <div class="stat__label">Clientes Satisfeitos</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat__number">5+</div>
+                                <div class="stat__label">Anos de Experiência</div>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="depoimentos" class="depoimentos">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">O que nossos clientes dizem</h2>
-                <div class="section-subtitle">Experiências que transformam negócios</div>
+        <!-- Services Section -->
+        <section id="servicos" class="services">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-header__title">Nossos Serviços</h2>
+                    <p class="section-header__subtitle">Soluções completas para sua marca</p>
+                </header>
+                
+                <div class="services__grid">
+                    <article class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-paint-brush" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title">Design Gráfico</h3>
+                        <p class="service-card__description">
+                            Criação de identidades visuais marcantes que comunicam a essência da sua marca de forma impactante.
+                        </p>
+                        <ul class="service-card__features">
+                            <li>Logotipos e Identidade Visual</li>
+                            <li>Material Impresso</li>
+                            <li>Ilustrações Personalizadas</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card service-card--featured">
+                        <div class="service-card__icon">
+                            <i class="fas fa-code" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title">Desenvolvimento Web</h3>
+                        <p class="service-card__description">
+                            Sites e aplicações web responsivas, modernas e otimizadas para performance e conversão.
+                        </p>
+                        <ul class="service-card__features">
+                            <li>Sites Responsivos</li>
+                            <li>E-commerce</li>
+                            <li>Aplicações Web</li>
+                        </ul>
+                        <div class="service-card__badge">Mais Procurado</div>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-bullhorn" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title">Branding</h3>
+                        <p class="service-card__description">
+                            Estratégias de marca completas que posicionam seu negócio de forma única no mercado.
+                        </p>
+                        <ul class="service-card__features">
+                            <li>Estratégia de Marca</li>
+                            <li>Manual de Identidade</li>
+                            <li>Posicionamento</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title">Design Mobile</h3>
+                        <p class="service-card__description">
+                            Interfaces mobile-first que oferecem experiências excepcionais em dispositivos móveis.
+                        </p>
+                        <ul class="service-card__features">
+                            <li>Apps Mobile</li>
+                            <li>UX/UI Design</li>
+                            <li>Prototipagem</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title">Marketing Digital</h3>
+                        <p class="service-card__description">
+                            Estratégias digitais integradas que aumentam sua visibilidade e geram resultados mensuráveis.
+                        </p>
+                        <ul class="service-card__features">
+                            <li>SEO e SEM</li>
+                            <li>Redes Sociais</li>
+                            <li>Análise de Dados</li>
+                        </ul>
+                    </article>
+                    
+                    <article class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fas fa-camera" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="service-card__title">Fotografia</h3>
+                        <p class="service-card__description">
+                            Produção fotográfica profissional que captura a essência da sua marca com qualidade excepcional.
+                        </p>
+                        <ul class="service-card__features">
+                            <li>Fotografia Corporativa</li>
+                            <li>Produtos</li>
+                            <li>Eventos</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
-            <div class="depoimentos-container">
-                <div class="depoimento">
-                    <div class="depoimento-content">
-                        <div class="quote-icon">"</div>
-                        <p>
-                            "A Agência Criativa Web transformou completamente nossa presença digital. 
-                            O novo site não apenas ficou visualmente impressionante, mas também 
-                            aumentou nossas conversões em 150%. Equipe excepcional!"
-                        </p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM2MzY2RjEiLz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTEyIDEyQzE0LjIwOTEgMTIgMTYgMTAuMjA5MSAxNiA4QzE2IDUuNzkwODYgMTQuMjA5MSA0IDEyIDRDOS43OTA4NiA0IDggNS43OTA4NiA4IDhDOCAxMC4yMDkxIDkuNzkwODYgMTIgMTIgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTIgMTRDOC4xMzQwMSAxNCA1IDE3LjEzNDAxIDUgMjFIMTlDMTkgMTcuMTM0IDEzLjg2NiAxNCAxMiAxNFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="Maria Santos">
-                            </div>
-                            <div class="author-info">
-                                <h4>Maria Santos</h4>
-                                <span>CEO, TechStart Solutions</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="depoimento">
-                    <div class="depoimento-content">
-                        <div class="quote-icon">"</div>
-                        <p>
-                            "Profissionalismo e criatividade em cada detalhe. A identidade visual 
-                            criada para nossa empresa superou todas as expectativas. Recomendamos 
-                            sem hesitação!"
-                        </p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNGRjZBMDAiLz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTEyIDEyQzE0LjIwOTEgMTIgMTYgMTAuMjA5MSAxNiA4QzE2IDUuNzkwODYgMTQuMjA5MSA0IDEyIDRDOS43OTA4NiA0IDggNS43OTA4NiA4IDhDOCAxMC4yMDkxIDkuNzkwODYgMTIgMTIgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTIgMTRDOC4xMzQwMSAxNCA1IDE3LjEzNDAxIDUgMjFIMTlDMTkgMTcuMTM0IDUuODY2IDE0IDEyIDE0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPgo=" alt="João Silva">
-                            </div>
-                            <div class="author-info">
-                                <h4>João Silva</h4>
-                                <span>Diretor, Inovação Digital</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="depoimento">
-                    <div class="depoimento-content">
-                        <div class="quote-icon">"</div>
-                        <p>
-                            "Parceria estratégica que fez toda a diferença para nosso crescimento. 
-                            A agência entendeu perfeitamente nossa visão e trouxe soluções inovadoras 
-                            que impactaram diretamente nossos resultados."
-                        </p>
-                        <div class="depoimento-author">
-                            <div class="author-avatar">
-                                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiMxMERCOEQiLz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTEyIDEyQzE0LjIwOTEgMTIgMTYgMTAuMjA5MSAxNiA4QzE2IDUuNzkwODYgMTQuMjA5MSA0IDEyIDRDOS43OTA4NiA0IDggNS43OTA4NiA4IDhDOCAxMC4yMDkxIDkuNzkwODYgMTIgMTIgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTIgMTRDOC4xMzQwMSAxNCA1IDE3LjEzNDAxIDUgMjFIMTlDMTkgMTcuMTM0IDUuODY2IDE0IDEyIDE0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPgo=" alt="Ana Costa">
-                            </div>
-                            <div class="author-info">
-                                <h4>Ana Costa</h4>
-                                <span>Fundadora, Costa & Associados</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contato" class="contato">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Entre em Contato</h2>
-                <div class="section-subtitle">Vamos criar algo incrível juntos</div>
+        <!-- Testimonials Section -->
+        <section id="depoimentos" class="testimonials">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-header__title">O que nossos clientes dizem</h2>
+                    <p class="section-header__subtitle">Experiências que transformam negócios</p>
+                </header>
+                
+                <div class="testimonials__container">
+                    <article class="testimonial">
+                        <div class="testimonial__content">
+                            <div class="testimonial__quote" aria-hidden="true">"</div>
+                            <blockquote class="testimonial__text">
+                                A Agência Criativa Web transformou completamente nossa presença digital. 
+                                O novo site não apenas ficou visualmente impressionante, mas também 
+                                aumentou nossas conversões em 150%. Equipe excepcional!
+                            </blockquote>
+                            
+                            <footer class="testimonial__author">
+                                <div class="author__avatar">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM2MzY2RjEiLz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTEyIDEyQzE0LjIwOTEgMTIgMTYgMTAuMjA5MSAxNiA4QzE2IDUuNzkwODYgMTQuMjA5MSA0IDEyIDRDOS43OTA4NiA0IDggNS43OTA4NiA4IDhDOCAxMC4yMDkxIDkuNzkwODYgMTIgMTIgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTIgMTRDOC4xMzQwMSAxNCA1IDE3LjEzNDAxIDUgMjFIMTlDMTkgMTcuMTM0IDEzLjg2NiAxNCAxMiAxNFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo8L3N2Zz4K" alt="Foto de perfil de Maria Santos">
+                                </div>
+                                <div class="author__info">
+                                    <cite class="author__name">Maria Santos</cite>
+                                    <span class="author__role">CEO, TechStart Solutions</span>
+                                </div>
+                            </footer>
+                        </div>
+                    </article>
+                    
+                    <article class="testimonial">
+                        <div class="testimonial__content">
+                            <div class="testimonial__quote" aria-hidden="true">"</div>
+                            <blockquote class="testimonial__text">
+                                Profissionalismo e criatividade em cada detalhe. A identidade visual 
+                                criada para nossa empresa superou todas as expectativas. Recomendamos 
+                                sem hesitação!
+                            </blockquote>
+                            
+                            <footer class="testimonial__author">
+                                <div class="author__avatar">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiNGRjZBMDAiLz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTEyIDEyQzE0LjIwOTEgMTIgMTYgMTAuMjA5MSAxNiA4QzE2IDUuNzkwODYgMTQuMjA5MSA0IDEyIDRDOS43OTA4NiA0IDggNS43OTA4NiA4IDhDOCAxMC4yMDkxIDkuNzkwODYgMTIgMTIgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTIgMTRDOC4xMzQwMSAxNCA1IDE3LjEzNDAxIDUgMjFIMTlDMTkgMTcuMTM0IDUuODY2IDE0IDEyIDE0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPgo=" alt="Foto de perfil de João Silva">
+                                </div>
+                                <div class="author__info">
+                                    <cite class="author__name">João Silva</cite>
+                                    <span class="author__role">Diretor, Inovação Digital</span>
+                                </div>
+                            </footer>
+                        </div>
+                    </article>
+                    
+                    <article class="testimonial">
+                        <div class="testimonial__content">
+                            <div class="testimonial__quote" aria-hidden="true">"</div>
+                            <blockquote class="testimonial__text">
+                                Parceria estratégica que fez toda a diferença para nosso crescimento. 
+                                A agência entendeu perfeitamente nossa visão e trouxe soluções inovadoras 
+                                que impactaram diretamente nossos resultados.
+                            </blockquote>
+                            
+                            <footer class="testimonial__author">
+                                <div class="author__avatar">
+                                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiMxMERCOEQiLz4KPHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4PSI4IiB5PSI4Ij4KPHBhdGggZD0iTTEyIDEyQzE0LjIwOTEgMTIgMTYgMTAuMjA5MSAxNiA4QzE2IDUuNzkwODYgMTQuMjA5MSA0IDEyIDRDOS43OTA4NiA0IDggNS43OTA4NiA4IDhDOCAxMC4yMDkxIDkuNzkwODYgMTIgMTIgMTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMTIgMTRDOC4xMzQwMSAxNCA1IDE3LjEzNDAxIDUgMjFIMTlDMTkgMTcuMTM0IDUuODY2IDE0IDEyIDE0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPgo=" alt="Foto de perfil de Ana Costa">
+                                </div>
+                                <div class="author__info">
+                                    <cite class="author__name">Ana Costa</cite>
+                                    <span class="author__role">Fundadora, Costa & Associados</span>
+                                </div>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="contato-content">
-                <div class="contato-info">
-                    <h3>Fale conosco</h3>
-                    <p>Estamos prontos para transformar suas ideias em realidade digital. Entre em contato e vamos conversar sobre seu próximo projeto.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="contact">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-header__title">Entre em Contato</h2>
+                    <p class="section-header__subtitle">Vamos criar algo incrível juntos</p>
+                </header>
+                
+                <div class="contact__content">
+                    <div class="contact__info">
+                        <h3 class="contact__heading">Fale conosco</h3>
+                        <p class="contact__description">
+                            Estamos prontos para transformar suas ideias em realidade digital. 
+                            Entre em contato e vamos conversar sobre seu próximo projeto.
+                        </p>
+                        
+                        <address class="contact__details">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt contact-item__icon" aria-hidden="true"></i>
+                                <div class="contact-item__content">
+                                    <h4 class="contact-item__title">Endereço</h4>
+                                    <p class="contact-item__text">
+                                        Rua da Inovação, 123<br>
+                                        Centro, Campinas - SP<br>
+                                        CEP: 13010-000
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone contact-item__icon" aria-hidden="true"></i>
+                                <div class="contact-item__content">
+                                    <h4 class="contact-item__title">Telefone</h4>
+                                    <p class="contact-item__text">
+                                        <a href="tel:+5519345674890" class="contact-item__link">(19) 3456-7890</a>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-envelope contact-item__icon" aria-hidden="true"></i>
+                                <div class="contact-item__content">
+                                    <h4 class="contact-item__title">E-mail</h4>
+                                    <p class="contact-item__text">
+                                        <a href="mailto:contato@agenciacriativaweb.com.br" class="contact-item__link">
+                                            contato@agenciacriativaweb.com.br
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </address>
+                        
+                        <nav class="social-links" aria-label="Redes sociais">
+                            <a href="#" class="social-links__item" aria-label="Instagram">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-links__item" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-links__item" aria-label="Behance">
+                                <i class="fab fa-behance" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-links__item" aria-label="Dribbble">
+                                <i class="fab fa-dribbble" aria-hidden="true"></i>
+                            </a>
+                        </nav>
+                    </div>
                     
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Endereço</h4>
-                            <p>Rua da Inovação, 123<br>Centro, Campinas - SP<br>CEP: 13010-000</p>
+                    <form class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="nome" class="form-group__label">Nome completo</label>
+                            <input 
+                                type="text" 
+                                id="nome" 
+                                name="nome" 
+                                class="form-group__input" 
+                                required 
+                                aria-describedby="nome-error"
+                            >
+                            <div id="nome-error" class="form-group__error" role="alert"></div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>(19) 3456-7890</p>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-group__label">E-mail</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form-group__input" 
+                                required 
+                                aria-describedby="email-error"
+                            >
+                            <div id="email-error" class="form-group__error" role="alert"></div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>E-mail</h4>
-                            <p>contato@agenciacriativaweb.com.br</p>
+                        
+                        <div class="form-group">
+                            <label for="telefone" class="form-group__label">Telefone</label>
+                            <input 
+                                type="tel" 
+                                id="telefone" 
+                                name="telefone" 
+                                class="form-group__input"
+                                aria-describedby="telefone-error"
+                            >
+                            <div id="telefone-error" class="form-group__error" role="alert"></div>
                         </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
-                    </div>
+                        
+                        <div class="form-group">
+                            <label for="servico" class="form-group__label">Serviço de interesse</label>
+                            <select 
+                                id="servico" 
+                                name="servico" 
+                                class="form-group__select"
+                                aria-describedby="servico-error"
+                            >
+                                <option value="">Selecione um serviço</option>
+                                <option value="design-grafico">Design Gráfico</option>
+                                <option value="desenvolvimento-web">Desenvolvimento Web</option>
+                                <option value="branding">Branding</option>
+                                <option value="design-mobile">Design Mobile</option>
+                                <option value="marketing-digital">Marketing Digital</option>
+                                <option value="fotografia">Fotografia</option>
+                            </select>
+                            <div id="servico-error" class="form-group__error" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mensagem" class="form-group__label">Mensagem</label>
+                            <textarea 
+                                id="mensagem" 
+                                name="mensagem" 
+                                rows="5" 
+                                class="form-group__textarea" 
+                                required 
+                                placeholder="Conte-nos sobre seu projeto..."
+                                aria-describedby="mensagem-error"
+                            ></textarea>
+                            <div id="mensagem-error" class="form-group__error" role="alert"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__title">
+                        Agência<span class="footer__highlight">Criativa</span>
+                    </h3>
+                    <p class="footer__description">
+                        Transformando ideias em experiências digitais extraordinárias.
+                    </p>
                 </div>
                 
-                <form class="contato-form">
-                    <div class="form-group">
-                        <label for="nome">Nome completo</label>
-                        <input type="text" id="nome" name="nome" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" id="telefone" name="telefone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="servico">Serviço de interesse</label>
-                        <select id="servico" name="servico">
-                            <option value="">Selecione um serviço</option>
-                            <option value="design-grafico">Design Gráfico</option>
-                            <option value="desenvolvimento-web">Desenvolvimento Web</option>
-                            <option value="branding">Branding</option>
-                            <option value="design-mobile">Design Mobile</option>
-                            <option value="marketing-digital">Marketing Digital</option>
-                            <option value="fotografia">Fotografia</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mensagem">Mensagem</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Conte-nos sobre seu projeto..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>Agência<span class="highlight">Criativa</span></h3>
-                    <p>Transformando ideias em experiências digitais extraordinárias.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#contato">Contato</a></li>
+                <nav class="footer__nav" aria-label="Links rápidos">
+                    <h4 class="footer__nav-title">Links Rápidos</h4>
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item">
+                            <a href="#home" class="footer__nav-link">Home</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#sobre" class="footer__nav-link">Sobre</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#servicos" class="footer__nav-link">Serviços</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#contato" class="footer__nav-link">Contato</a>
+                        </li>
                     </ul>
-                </div>
-                <div class="footer-services">
-                    <h4>Serviços</h4>
-                    <ul>
-                        <li><a href="#servicos">Design Gráfico</a></li>
-                        <li><a href="#servicos">Desenvolvimento Web</a></li>
-                        <li><a href="#servicos">Branding</a></li>
-                        <li><a href="#servicos">Marketing Digital</a></li>
+                </nav>
+                
+                <nav class="footer__services" aria-label="Serviços">
+                    <h4 class="footer__services-title">Serviços</h4>
+                    <ul class="footer__services-list">
+                        <li class="footer__services-item">
+                            <a href="#servicos" class="footer__services-link">Design Gráfico</a>
+                        </li>
+                        <li class="footer__services-item">
+                            <a href="#servicos" class="footer__services-link">Desenvolvimento Web</a>
+                        </li>
+                        <li class="footer__services-item">
+                            <a href="#servicos" class="footer__services-link">Branding</a>
+                        </li>
+                        <li class="footer__services-item">
+                            <a href="#servicos" class="footer__services-link">Marketing Digital</a>
+                        </li>
                     </ul>
-                </div>
+                </nav>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Agência Criativa Web. Todos os direitos reservados.</p>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Agência Criativa Web. Todos os direitos reservados.
+                </p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
