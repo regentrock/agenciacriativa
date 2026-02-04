@@ -1,0 +1,359 @@
+// Importar variáveis e mixins
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+/* Layout: Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 v.$espacamento-xl;
+}
+
+/* Layout: Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: v.$cor-fundo-claro;
+  overflow: hidden;
+  
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  
+  &__shapes {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  
+  &__title {
+    font-size: v.$fonte-hero;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: v.$espacamento-lg;
+    color: v.$cor-texto-escuro;
+  }
+  
+  &__subtitle {
+    font-size: v.$fonte-grande;
+    color: v.$cor-texto-claro;
+    margin-bottom: v.$espacamento-lg;
+    line-height: 1.6;
+  }
+  
+  &__actions {
+    display: flex;
+    gap: v.$espacamento-md;
+    flex-wrap: wrap;
+  }
+}
+
+/* Layout: Shapes */
+.shape {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+  
+  &--primary {
+    width: 200px;
+    height: 200px;
+    background: v.$gradiente-primario;
+    border-radius: v.$border-radius-circular;
+    top: 20%;
+    right: 10%;
+    animation-delay: 0s;
+  }
+  
+  &--secondary {
+    width: 150px;
+    height: 150px;
+    background: v.$gradiente-secundario;
+    transform: rotate(45deg);
+    top: 60%;
+    left: 5%;
+    animation-delay: 2s;
+  }
+  
+  &--tertiary {
+    width: 100px;
+    height: 100px;
+    background: v.$gradiente-acento;
+    border-radius: 20px;
+    top: 30%;
+    left: 15%;
+    animation-delay: 4s;
+  }
+}
+
+/* Layout: Seção */
+.section-header {
+  text-align: center;
+  margin-bottom: calc(v.$espacamento-xxxl - v.$espacamento-md);
+  
+  &__title {
+    font-size: clamp(v.$fonte-xx-grande, 4vw, v.$fonte-xxx-grande);
+    font-weight: 700;
+    color: v.$cor-texto-escuro;
+    margin-bottom: v.$espacamento-md;
+  }
+  
+  &__subtitle {
+    font-size: v.$fonte-grande;
+    color: v.$cor-texto-claro;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: v.$gradiente-primario;
+      border-radius: 2px;
+    }
+  }
+}
+
+/* Layout: Sobre */
+.about {
+  background: v.$cor-texto-branco;
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$espacamento-xxxl;
+    align-items: center;
+  }
+  
+  &__heading {
+    font-size: v.$fonte-xx-grande;
+    font-weight: 600;
+    color: v.$cor-texto-escuro;
+    margin-bottom: v.$espacamento-lg;
+  }
+  
+  &__description {
+    font-size: v.$fonte-medio;
+    color: v.$cor-texto-claro;
+    margin-bottom: v.$espacamento-lg;
+    line-height: 1.8;
+  }
+  
+  &__stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Layout: Valores */
+.values {
+  display: grid;
+  gap: v.$espacamento-lg;
+}
+
+.value {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$espacamento-md;
+  
+  &__icon {
+    font-size: v.$fonte-x-grande;
+    color: v.$cor-primaria;
+    margin-top: calc(v.$espacamento-xs / 2);
+  }
+  
+  &__title {
+    font-size: v.$fonte-medio;
+    font-weight: 600;
+    color: v.$cor-texto-escuro;
+    margin-bottom: v.$espacamento-sm;
+  }
+  
+  &__description {
+    color: v.$cor-texto-claro;
+    font-size: v.$fonte-pequeno;
+  }
+}
+
+/* Layout: Stats */
+.stats {
+  @include m.grid-responsive(120px, v.$espacamento-lg);
+  text-align: center;
+}
+
+.stat {
+  padding: v.$espacamento-xl;
+  background: v.$cor-fundo-claro;
+  border-radius: v.$border-radius-xl;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  &__number {
+    font-size: v.$fonte-xxx-grande;
+    font-weight: 700;
+    @include m.text-highlight;
+    margin-bottom: v.$espacamento-sm;
+  }
+  
+  &__label {
+    font-size: v.$fonte-pequeno;
+    color: v.$cor-texto-claro;
+    font-weight: 500;
+  }
+}
+
+/* Layout: Serviços */
+.services {
+  background: v.$cor-fundo-claro;
+  
+  &__grid {
+    @include m.grid-responsive(350px, v.$espacamento-lg);
+  }
+}
+
+/* Layout: Depoimentos */
+.testimonials {
+  background: v.$cor-texto-branco;
+  
+  &__container {
+    @include m.grid-responsive(350px, v.$espacamento-lg);
+  }
+}
+
+/* Layout: Contato */
+.contact {
+  background: v.$cor-fundo-claro;
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$espacamento-xxxl;
+    align-items: start;
+  }
+  
+  &__heading {
+    font-size: v.$fonte-xx-grande;
+    font-weight: 600;
+    color: v.$cor-texto-escuro;
+    margin-bottom: v.$espacamento-md;
+  }
+  
+  &__description {
+    font-size: v.$fonte-medio;
+    color: v.$cor-texto-claro;
+    margin-bottom: v.$espacamento-lg;
+    line-height: 1.6;
+  }
+  
+  &__details {
+    font-style: normal;
+  }
+}
+
+/* Contact Form */
+.contact-form {
+  background: v.$cor-texto-branco;
+  padding: v.$espacamento-xl;
+  border-radius: v.$border-radius-xl;
+  box-shadow: v.$sombra-leve;
+}
+
+/* Layout: Footer */
+.footer {
+  background: v.$cor-fundo-escuro;
+  color: v.$cor-texto-branco;
+  padding: v.$espacamento-xxxl 0 v.$espacamento-md;
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: v.$espacamento-lg;
+    margin-bottom: v.$espacamento-lg;
+  }
+  
+  &__brand {
+    // Estilo para a marca no footer
+  }
+  
+  &__title {
+    font-size: v.$fonte-x-grande;
+    margin-bottom: v.$espacamento-md;
+  }
+  
+  &__highlight {
+    color: v.$cor-primaria;
+  }
+  
+  &__description {
+    color: v.$cor-texto-claro;
+    line-height: 1.6;
+    margin-bottom: v.$espacamento-md;
+  }
+  
+  &__nav {
+    // Navegação do footer
+  }
+  
+  &__nav-title,
+  &__services-title {
+    font-size: v.$fonte-medio;
+    margin-bottom: v.$espacamento-md;
+    color: v.$cor-texto-branco;
+  }
+  
+  &__nav-list,
+  &__services-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  &__nav-item,
+  &__services-item {
+    margin-bottom: v.$espacamento-sm;
+  }
+  
+  &__nav-link,
+  &__services-link {
+    color: v.$cor-texto-claro;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: v.$cor-primaria;
+    }
+  }
+  
+  &__services {
+    // Serviços no footer
+  }
+  
+  &__bottom {
+    text-align: center;
+    padding-top: v.$espacamento-lg;
+    border-top: 1px solid #374151;
+  }
+  
+  &__copyright {
+    color: v.$cor-texto-claro;
+    font-size: v.$fonte-pequeno;
+  }
+}

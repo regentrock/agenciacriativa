@@ -1,0 +1,81 @@
+// Importar variáveis primeiro
+@use 'variaveis' as v;
+
+// Mixin para responsividade
+@mixin responsivo($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: v.$breakpoint-mobile) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: v.$breakpoint-tablet) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (max-width: v.$breakpoint-desktop) {
+      @content;
+    }
+  } @else if $breakpoint == wide {
+    @media (max-width: v.$breakpoint-wide) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center($direcao: row) {
+  display: flex;
+  flex-direction: $direcao;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid-responsive($min-width: 350px, $gap: v.$espacamento-lg) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+@mixin btn-base {
+  display: inline-block;
+  padding: v.$espacamento-md v.$espacamento-xl;
+  border-radius: v.$border-radius-md;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: v.$fonte-base;
+  text-align: center;
+  font-family: inherit;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: v.$sombra-forte;
+  }
+}
+
+@mixin fade-in-up($delay: 0s) {
+  animation: fadeInUp 0.6s ease $delay forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@mixin text-highlight {
+  background: v.$gradiente-primario;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin card-base {
+  background: v.$cor-texto-branco;
+  border-radius: v.$border-radius-xl;
+  box-shadow: v.$sombra-leve;
+  transition: all 0.3s ease;
+  border: 1px solid v.$cor-borda;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: v.$sombra-forte;
+  }
+}

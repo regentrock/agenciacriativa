@@ -1,0 +1,360 @@
+// Importar variáveis e mixins
+@use 'variaveis' as v;
+@use 'mixins' as m;
+
+/* Componente: Botão */
+.btn {
+  @include m.btn-base;
+  
+  &--primary {
+    background: v.$gradiente-primario;
+    color: v.$cor-texto-branco;
+    box-shadow: v.$sombra-media;
+  }
+  
+  &--secondary {
+    background: transparent;
+    color: v.$cor-primaria;
+    border: 2px solid v.$cor-primaria;
+    
+    &:hover {
+      background: v.$cor-primaria;
+      color: v.$cor-texto-branco;
+    }
+  }
+  
+  &--full {
+    width: 100%;
+  }
+}
+
+/* Componente: Cabeçalho */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(v.$cor-texto-branco, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid v.$cor-borda;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: v.$fonte-x-grande;
+  font-weight: 700;
+  color: v.$cor-texto-escuro;
+  
+  &__highlight {
+    color: v.$cor-primaria;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: v.$espacamento-lg;
+    align-items: center;
+  }
+  
+  &__item {
+    position: relative;
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: v.$cor-texto-escuro;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    
+    &:hover {
+      color: v.$cor-primaria;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: v.$gradiente-primario;
+      transition: width 0.3s ease;
+    }
+  }
+}
+
+/* Componente: Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: v.$espacamento-sm;
+  
+  &__line {
+    width: 25px;
+    height: 3px;
+    background: v.$cor-texto-escuro;
+    margin: 3px 0;
+    transition: 0.3s;
+  }
+}
+
+/* Componente: Card de Serviço */
+.service-card {
+  @include m.card-base;
+  padding: v.$espacamento-xxl;
+  position: relative;
+  
+  &--featured {
+    border: 2px solid v.$cor-primaria;
+    transform: scale(1.02);
+  }
+  
+  &__badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: v.$gradiente-primario;
+    color: v.$cor-texto-branco;
+    padding: v.$espacamento-sm v.$espacamento-md;
+    border-radius: 20px;
+    font-size: v.$fonte-pequeno;
+    font-weight: 600;
+  }
+  
+  &__icon {
+    width: 60px;
+    height: 60px;
+    background: v.$gradiente-primario;
+    border-radius: v.$border-radius-circular;
+    @include m.flex-center;
+    margin-bottom: v.$espacamento-lg;
+    
+    i {
+      font-size: v.$fonte-x-grande;
+      color: v.$cor-texto-branco;
+    }
+  }
+  
+  &__title {
+    font-size: v.$fonte-x-grande;
+    font-weight: 600;
+    color: v.$cor-texto-escuro;
+    margin-bottom: v.$espacamento-md;
+  }
+  
+  &__description {
+    color: v.$cor-texto-claro;
+    margin-bottom: v.$espacamento-lg;
+    line-height: 1.6;
+  }
+  
+  &__features {
+    list-style: none;
+    
+    li {
+      color: v.$cor-texto-claro;
+      margin-bottom: v.$espacamento-sm;
+      display: flex;
+      align-items: center;
+      font-size: v.$fonte-pequeno;
+      
+      &::before {
+        content: '✓';
+        color: v.$cor-acento;
+        font-weight: bold;
+        margin-right: v.$espacamento-sm;
+      }
+    }
+  }
+}
+
+/* Componente: Depoimento */
+.testimonial {
+  background: v.$cor-fundo-claro;
+  border-radius: v.$border-radius-xl;
+  padding: v.$espacamento-xl;
+  position: relative;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  &__quote {
+    font-size: v.$fonte-xxx-grande;
+    color: v.$cor-primaria;
+    opacity: 0.3;
+    position: absolute;
+    top: -1rem;
+    left: -0.5rem;
+    font-family: serif;
+  }
+  
+  &__text {
+    font-size: v.$fonte-medio;
+    color: v.$cor-texto-escuro;
+    line-height: 1.6;
+    margin-bottom: v.$espacamento-lg;
+    font-style: italic;
+  }
+  
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: v.$espacamento-md;
+  }
+}
+
+/* Componente: Author */
+.author {
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: v.$border-radius-circular;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  &__info {
+    flex: 1;
+  }
+  
+  &__name {
+    font-size: v.$fonte-medio;
+    font-weight: 600;
+    color: v.$cor-texto-escuro;
+    margin-bottom: calc(v.$espacamento-xs / 2);
+    font-style: normal;
+  }
+  
+  &__role {
+    color: v.$cor-texto-claro;
+    font-size: v.$fonte-pequeno;
+  }
+}
+
+/* Componente: Contact Item */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$espacamento-md;
+  margin-bottom: v.$espacamento-lg;
+  
+  &__icon {
+    font-size: v.$fonte-grande;
+    color: v.$cor-primaria;
+    margin-top: calc(v.$espacamento-xs / 2);
+  }
+  
+  &__content {
+    flex: 1;
+  }
+  
+  &__title {
+    font-size: v.$fonte-medio;
+    font-weight: 600;
+    color: v.$cor-texto-escuro;
+    margin-bottom: v.$espacamento-sm;
+  }
+  
+  &__text {
+    color: v.$cor-texto-claro;
+    line-height: 1.4;
+  }
+  
+  &__link {
+    color: v.$cor-texto-claro;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: v.$cor-primaria;
+    }
+  }
+}
+
+/* Componente: Social Links */
+.social-links {
+  display: flex;
+  gap: v.$espacamento-md;
+  margin-top: v.$espacamento-lg;
+  
+  &__item {
+    width: 40px;
+    height: 40px;
+    background: v.$gradiente-primario;
+    border-radius: v.$border-radius-circular;
+    @include m.flex-center;
+    color: v.$cor-texto-branco;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/* Componente: Formulário */
+.form-group {
+  margin-bottom: v.$espacamento-lg;
+  
+  &__label {
+    display: block;
+    font-weight: 600;
+    color: v.$cor-texto-escuro;
+    margin-bottom: v.$espacamento-sm;
+  }
+  
+  &__input,
+  &__select,
+  &__textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid v.$cor-borda;
+    border-radius: v.$border-radius-md;
+    font-size: v.$fonte-base;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    
+    &:focus {
+      outline: none;
+      border-color: v.$cor-primaria;
+    }
+  }
+  
+  &__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  &__error {
+    color: v.$cor-erro;
+    font-size: v.$fonte-pequeno;
+    margin-top: calc(v.$espacamento-sm / 2);
+    display: none;
+  }
+}

@@ -1,0 +1,54 @@
+// Cores
+$cor-primaria: #6366f1;
+$cor-primaria-escura: #4f46e5;
+$cor-secundaria: #f59e0b;
+$cor-acento: #10b981;
+$cor-texto-escuro: #1f2937;
+$cor-texto-claro: #6b7280;
+$cor-texto-branco: #ffffff;
+$cor-fundo-claro: #f9fafb;
+$cor-fundo-escuro: #111827;
+$cor-borda: #e5e7eb;
+$cor-erro: #dc2626;
+
+// Espaçamentos
+$espacamento-xs: 0.25rem;
+$espacamento-sm: 0.5rem;
+$espacamento-md: 1rem;
+$espacamento-lg: 1.5rem;
+$espacamento-xl: 2rem;
+$espacamento-xxl: 2.5rem;
+$espacamento-xxxl: 3rem;
+
+// Fontes
+$fonte-pequeno: 0.875rem;
+$fonte-base: 1rem;
+$fonte-medio: 1.125rem;
+$fonte-grande: 1.25rem;
+$fonte-x-grande: 1.5rem;
+$fonte-xx-grande: 2rem;
+$fonte-xxx-grande: 3rem;
+$fonte-hero: clamp(2.5rem, 5vw, 4rem);
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1200px;
+
+// Gradientes
+$gradiente-primario: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+$gradiente-secundario: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+$gradiente-acento: linear-gradient(135deg, #10b981 0%, #059669 100%);
+
+// Sombras
+$sombra-leve: 0 1px 3px rgba(0, 0, 0, 0.1);
+$sombra-media: 0 4px 6px rgba(0, 0, 0, 0.1);
+$sombra-forte: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+// Border Radius
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-circular: 50%;

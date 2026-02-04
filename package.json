@@ -1,0 +1,11 @@
+{
+  "name": "agencia-criativa-web",
+  "version": "1.0.0",
+  "scripts": {
+    "sass": "sass scss/estilos.scss css/estilos.css --watch --style compressed",
+    "sass-dev": "sass scss/estilos.scss css/estilos.css --watch --style expanded"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

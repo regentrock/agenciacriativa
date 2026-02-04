@@ -1,0 +1,69 @@
+// Importar variáveis primeiro
+@use 'variaveis' as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: v.$cor-texto-escuro;
+  overflow-x: hidden;
+  font-size: v.$fonte-base;
+}
+
+section {
+  padding: v.$espacamento-xxxl 0;
+}
+
+/* Scrollbar Customizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: v.$cor-fundo-claro;
+}
+
+::-webkit-scrollbar-thumb {
+  background: v.$cor-primaria;
+  border-radius: 4px;
+  
+  &:hover {
+    background: v.$cor-primaria-escura;
+  }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(5deg); 
+  }
+}
+
+/* Acessibilidade - Reduzir Animação */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
